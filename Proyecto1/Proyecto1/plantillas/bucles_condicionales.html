@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <h1>
+            Lista N&ordm; 1: {{lista}}<br>
+            <ul>
+                {% for valor in lista %}
+                    <li>{{valor}}</li>
+                {% endfor %}
+            </ul>
+            Lista N&ordm; 2: {{lista2}}<br>
+            <ul>
+                {% if lista2%}
+                    {% for valor in lista2 %}
+                        <li>{{valor}}</li>
+                    {% endfor %}
+                {% else %}
+                    "No hay elementos en lista 2"
+                {% endif %}
+            </ul>
+        </h1>
+    </body>
+</html>

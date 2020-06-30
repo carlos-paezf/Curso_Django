@@ -2,10 +2,12 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 
+
 class Persona(object):
     def __init__(self, nombre, apellido):
         self.nombre = nombre
         self.apellido = apellido
+
 
 def saludo(request):    #Primera Vista
     #Plantilla
@@ -15,6 +17,7 @@ def saludo(request):    #Primera Vista
     contexto = Context()
     documento = plantilla.render(contexto)
     return HttpResponse(documento)
+
 
 def despedida(request):
     documento = '''
@@ -29,6 +32,7 @@ def despedida(request):
     </html>'''
     return HttpResponse(documento)
 
+
 def fecha(request):
     fecha_actual = datetime.datetime.now()
     doc_externo = open("D:/Curso_Django/Proyecto1/Proyecto1/plantillas/fecha.html")
@@ -37,6 +41,7 @@ def fecha(request):
     contexto = Context({"fecha_actual":fecha_actual})
     cuerpo = plantilla.render(contexto)
     return HttpResponse(cuerpo)
+
 
 def calcularEdad (request,edad,agno):  #Primera URL con parametro
     #Creacion de objeto
@@ -53,5 +58,18 @@ def calcularEdad (request,edad,agno):  #Primera URL con parametro
                         "edad_futura":edadFutura,
                         "nombre":persona1.nombre,
                         "apellido":persona1.apellido})
+    cuerpo = plantilla.render(contexto)
+    return HttpResponse(cuerpo)
+
+
+def bucles_condicionales(request):
+    #Variables
+    lista = ["Bucles", "Condicionales", "Listas"]
+    lista2 = []
+    #Plantilla
+    doc_externo = open("D:/Curso_Django/Proyecto1/Proyecto1/plantillas/bucles_condicionales.html")
+    plantilla = Template(doc_externo.read())
+    doc_externo.close()
+    contexto = Context({"lista":lista, "lista2":lista2})
     cuerpo = plantilla.render(contexto)
     return HttpResponse(cuerpo)
