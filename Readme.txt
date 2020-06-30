@@ -42,3 +42,7 @@ cambios en el diseño con independencia del codigo de la vista, tambien se puede
 tambien permite que se pueda trabajar a la vez ambas disciplinas (logica y diseño). Para crear las plantillas existen unos 
 pasos: Crear objeto de tipo template - Crear un contexto (Datos adicionales para el template [variables, funciones, etc...])
 - Renderizar el objeto template.
+Desde una plantilla podemos acceder a las variables que declaramos en las vistas, para esto, creamos un diccionario 
+dentro del contexto asignando la llave-valor correspondiente. Posteriormente en el Template, podemos acceder a las llaves 
+mediante {{llave}}, esto tambien nos permite acceder a las propiedades que posea dicha variable. Tambien podemos usar la
+Programación Orientada a Objetos y la nomenclatura del punto para acceder a dichas propiedades
