@@ -45,4 +45,15 @@ pasos: Crear objeto de tipo template - Crear un contexto (Datos adicionales para
 Desde una plantilla podemos acceder a las variables que declaramos en las vistas, para esto, creamos un diccionario 
 dentro del contexto asignando la llave-valor correspondiente. Posteriormente en el Template, podemos acceder a las llaves 
 mediante {{llave}}, esto tambien nos permite acceder a las propiedades que posea dicha variable. Tambien podemos usar la
-Programación Orientada a Objetos y la nomenclatura del punto para acceder a dichas propiedades
+Programación Orientada a Objetos y la nomenclatura del punto para acceder a dichas propiedades.
+Dentro de las plantillas encontramos una jerarquia u orden de llamadas -> Diccionario-Atributo-Método-Índice de lista
+
+Aunque en las plantillas se pueden ingresar estructuras de control de flujo, no es recomendable abusar de ellas, ya que el 
+modelo MTV busca que la logica se separe de la parte grafica, esto permite el multitrabajo en un grupo o proyecto.
+Para usar un filtro, empleamo el simbolo tuberia "|", por ejemplo "nombre|upper", si queremos encadenar filtros seguimos usando
+las tuberias, por ejemplo, "nombre|first|lower"
+Para emplear los cargadores, se ingresa el directorio raiz donde se encuentran todas las plantillas dentro del apartado 'DIRS':[]
+de la lista TEMPLATES ubicada en el archivo settings.py, Cuando se empieza a emplear los cargadores, la sintaxis cambia a la 
+manjeada de manera rustica, por un lado se simplifican algunas lineas y por otro lado, el metodo .render(), cambia el contexto 
+que recibe. Esto se debe el Template que recibe, es diferente al manejado anteriormente. Para solucionar esto, le pasamos por 
+parametro un diccionario como contexto, de hecho, es el mismo diccionario que se manejaba como contexto en las vistas rusticas.
