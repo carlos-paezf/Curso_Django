@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 
 class Persona(object):
     def __init__(self, nombre, apellido):
@@ -81,3 +82,9 @@ def condicionales_filtros(request):
     doc_externo = get_template('condicionales_filtros.html')
     cuerpo = doc_externo.render({"nombre":persona2.nombre,"apellido":persona2.apellido})
     return HttpResponse(cuerpo)
+
+def plantillas_incrustadas(request):
+    #Creacion de objeto
+    persona3 = Persona("Arturo", "Marin")
+    #Uso de render de shortcuts
+    return render(request, "plantillas_incrustadas/plantillas_incrustadas.html", {"nombre":persona3.nombre,"apellido":persona3.apellido})

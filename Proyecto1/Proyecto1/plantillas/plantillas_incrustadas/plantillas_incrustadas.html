@@ -1,0 +1,15 @@
+<html>
+    <head>
+        {% include "plantillas_incrustadas/barra.html" %}
+    <head>
+    <body>
+        <h1>
+            En esta pagina se implementa el incrustar plantillas
+        </h1>
+    </body>
+    <footer>
+        <h4>
+            Persona mencionada en esta plantilla: {{apellido|first}}., {{nombre|upper}}
+        </h4>
+    </footer>
+</html>
