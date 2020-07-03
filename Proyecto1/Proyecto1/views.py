@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
-
+from django.template.loader import get_template
 
 class Persona(object):
     def __init__(self, nombre, apellido):
@@ -72,4 +72,12 @@ def bucles_condicionales(request):
     doc_externo.close()
     contexto = Context({"lista":lista, "lista2":lista2})
     cuerpo = plantilla.render(contexto)
+    return HttpResponse(cuerpo)
+
+def condicionales_filtros(request):
+    #Creacion de objeto
+    persona2 = Persona("Carlos", "Paez")
+    #Uso de cargadores
+    doc_externo = get_template('condicionales_filtros.html')
+    cuerpo = doc_externo.render({"nombre":persona2.nombre,"apellido":persona2.apellido})
     return HttpResponse(cuerpo)

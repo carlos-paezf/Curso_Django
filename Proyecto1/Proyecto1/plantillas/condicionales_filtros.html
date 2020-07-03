@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1 style="color: DarkOrchid">Condicionales</h1>
+        {% if nombre == 'David' %}
+            <h2>El curso lo esta realizando {{nombre}}</h2>
+        {% else %}
+            <h2>El curso esta dirigido por PildorasInformaticas y lo esta realizando {{nombre|upper}}</h2>
+        {% endif %}
+
+        {% comment %}
+        Esta etiqueta permite un comentario de varias lineas.
+        Por ejemplo, este comentario que acabo de hacer
+        {% endcomment %}
+
+        {# La almohadilla numeral, permite comentarios de 1 linea #}
+
+        {% filter force_escape|upper|linebreaks %}
+            Este texto sera un HTML-escaped, y aparecera todo en mayusculas
+        {% endfilter %}
+    </body>
+</html>
+<!--
+https://docs.djangoproject.com/en/2.2/ref/templates/builtins/
+-->
