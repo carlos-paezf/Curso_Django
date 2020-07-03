@@ -25,5 +25,6 @@ urlpatterns = [
     path('edadFutura/<int:edad>/<int:agno>', calcularEdad),
     path('bucles_condicionales/', bucles_condicionales),
     path('condicionales_filtros/', condicionales_filtros),
-    path('plantillas_incrustadas/', plantillas_incrustadas)
+    path('plantillas_incrustadas/', plantillas_incrustadas),
+    path('herencia_plantillas/', herencia_plantillas)
 ]

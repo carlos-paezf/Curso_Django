@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+
+        {% include "plantillas_incrustadas/barra.html" %}
+    </head>
+    <body>
+        <h1 style="background-color:GreenYellow; text-align:center">Primera Pagina usando Django</h1>
+        <h3>Curso guiado por PildorasInformaticas</h3>
+        {% block content %}
+        {% endblock %}
+    </body>
+    <footer>
+        Paginas sin formato elegante
+    </footer>
+<html>
