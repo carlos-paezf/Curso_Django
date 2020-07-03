@@ -63,3 +63,5 @@ En la documentacion de Django encontramos el porque de las diferencias entre los
 Podemos reutilizar codigo dentro de las plantillas, haciendo uso de una plantilla donde se ingrese el codigo repetido, para luego
 incrustarlo en una plantilla especifica. Se debe tener en cuenta el folder en donde se ubique para poder llamarlo, recordando que 
 los templates ya estan sido asignados a una direccion en especifico. Para llamarlas, se usa la palabra clave "include".
+La herencia de plantillas permite que se tenga una clase padre en la cual ira el codigo fijo, y unas clases hijas que permiten un
+codigo cambiente. Para hacer esto, se debe llamar desde la clase hija a la clase padre con la palabra clave "extends".
