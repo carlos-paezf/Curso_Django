@@ -57,3 +57,9 @@ de la lista TEMPLATES ubicada en el archivo settings.py, Cuando se empieza a emp
 manjeada de manera rustica, por un lado se simplifican algunas lineas y por otro lado, el metodo .render(), cambia el contexto 
 que recibe. Esto se debe el Template que recibe, es diferente al manejado anteriormente. Para solucionar esto, le pasamos por 
 parametro un diccionario como contexto, de hecho, es el mismo diccionario que se manejaba como contexto en las vistas rusticas.
+En la documentacion de Django encontramos el porque de las diferencias entre los 2 Template. Uno se instancia en 
+<class 'django.template.backends.django.Template'> y el otro se instancia en <class 'django.template.base.Template'>
+
+Podemos reutilizar codigo dentro de las plantillas, haciendo uso de una plantilla donde se ingrese el codigo repetido, para luego
+incrustarlo en una plantilla especifica. Se debe tener en cuenta el folder en donde se ubique para poder llamarlo, recordando que 
+los templates ya estan sido asignados a una direccion en especifico. Para llamarlas, se usa la palabra clave "include".
