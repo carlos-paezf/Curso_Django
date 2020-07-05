@@ -65,3 +65,8 @@ incrustarlo en una plantilla especifica. Se debe tener en cuenta el folder en do
 los templates ya estan sido asignados a una direccion en especifico. Para llamarlas, se usa la palabra clave "include".
 La herencia de plantillas permite que se tenga una clase padre en la cual ira el codigo fijo, y unas clases hijas que permiten un
 codigo cambiente. Para hacer esto, se debe llamar desde la clase hija a la clase padre con la palabra clave "extends".
+
+En Django es importante diferenciar entre una aplicacion y un proyecto. Las aplicaciones son paquetes o modulos que se encargan de
+realizar una suma de tareas concretas, esto hace que en proyecto tengamos varias aplicaciones que se encarguen de partes especificas
+de la logica. Las tablas de las bases de datos SQLite3 se crean empleando las Clase Model, la cual permite manejar en su totalidad
+las tablas de las BBDD. Pero la clase Model debe estar relacionado si o si dentro de una aplicación.
