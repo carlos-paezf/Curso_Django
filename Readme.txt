@@ -70,3 +70,6 @@ En Django es importante diferenciar entre una aplicacion y un proyecto. Las apli
 realizar una suma de tareas concretas, esto hace que en proyecto tengamos varias aplicaciones que se encarguen de partes especificas
 de la logica. Las tablas de las bases de datos SQLite3 se crean empleando las Clase Model, la cual permite manejar en su totalidad
 las tablas de las BBDD. Pero la clase Model debe estar relacionado si o si dentro de una aplicación.
+Para crear una aplicacacion usamos el comando dentro del directorio del proyecto:
+
+	python manage.py startapp <nombreAplicacion>			(5)			
