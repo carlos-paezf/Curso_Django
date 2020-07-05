@@ -90,3 +90,32 @@ Para crear el codigo sql de las tablas ingresamos el comando:
 	python manage.py sqlmigrate <nombreAplicacion> <numeroMigracion> 		(8)
 
 Para usar dicho codigo sql ingresamos el comando (2).
+Para insertar, eliminar o actualizar datos, podemos acceder desde la consola al shell de python, para ello ingresamos:
+
+	python manage.py shell						(9)
+
+Estando en el shell podemos ingresar el siguiente codigo en lenguaje python para añadir un elemento:
+
+	from <nombreApp>.models import <Modelo>
+	variable1 = Modelo(llave1='valorChar', llave2=valorInt)
+	variable1.save()
+o tambien en una sola linea:
+	variable2 = Modelo.objects.create(llave1='valorChar', llave2=valorInt)
+
+Ahora para actualizar un elementos escribimos el siguiente codigo
+
+	from <nombreApp>.models import <Modelo>
+	variable1.propiedad = valor
+	variable1.save()
+
+Para eliminar un registro usamos el codigo:
+
+	from <nombreApp>.models import <Modelo>
+	variable3 = Modelo.objects.get(llave=valor)
+	variable3.delete()
+
+Para realizar un Select ingresamos el codigo:
+
+	from <nombreApp>.models import <Modelo>
+	lista = Modelo.objects.all()
+	lista.query.__str__()
