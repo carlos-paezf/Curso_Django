@@ -72,4 +72,21 @@ de la logica. Las tablas de las bases de datos SQLite3 se crean empleando las Cl
 las tablas de las BBDD. Pero la clase Model debe estar relacionado si o si dentro de una aplicación.
 Para crear una aplicacacion usamos el comando dentro del directorio del proyecto:
 
-	python manage.py startapp <nombreAplicacion>			(5)			
+	python manage.py startapp <nombreAplicacion>			(5)		
+
+Para registrar una aplicacion nos debemos dirigir al archivo settings.py ubicado en la subcarpeta del proyecto. Nos dirigimos a la
+lista INSTALLED_APPS, y ponenmos el nombre de la aplicacion que vamos a agregar. Para ver el status de la aplicacion, ingresamos
+el comando en consola:
+
+	python manage.py check <nombreAplicacion>			(6)
+
+Para crear la base de datos de nuestra aplicacion, ingresamos el comando:
+	
+	python manage.py makemigrations					(7)
+
+Cuando ingresamos el comando anterior tendremos el numero de migracion en el siguiente formato: <nombreApp>\migrations\<numMigracion>_initial.py
+Para crear el codigo sql de las tablas ingresamos el comando:
+
+	python manage.py sqlmigrate <nombreAplicacion> <numeroMigracion> 		(8)
+
+Para usar dicho codigo sql ingresamos el comando (2).
