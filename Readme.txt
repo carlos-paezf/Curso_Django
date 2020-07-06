@@ -119,3 +119,22 @@ Para realizar un Select ingresamos el codigo:
 	from <nombreApp>.models import <Modelo>
 	lista = Modelo.objects.all()
 	lista.query.__str__()
+
+Para hacer las conexiones con una BBDD en PostgreSQL, se debe hacer la instalacion de una libreria llamada psycopg2
+la cual no viene con Django, para ello ingresamos por consola dentro del directorio del proyecto el siguiente comando:
+
+	pip install psycopg2						(10)
+
+Ahora en el archivo settings.py, en la lista de DATABASES, ingresamos los siguientes cambios:
+
+	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '<nombre de la BBDD>',
+        'USER': '<usuario de conexion a la BBDD>',
+        'PASSWORD': '<contraseña de ingreso a la BBDD>',
+        'HOST': '<direccion de conexion>',
+        'DATABASE_PORT': '<puerto de conexion>',
+
+Repetimos los comandos (7) y (2) en el orden presentado. Para observar los cambios ingresamos a la pagina de conexion
+con PostgreSQL, nos dirigimos a la base de datos, luego a la seccion Schemas, y por ultimo a Tables, alli deben estar
+las tablas que hemos creado en nuestro proyecto. Posteriormente podemos hacer uso del manejo de registros por consola, 
+mientras se aprende el uso de formularios.
