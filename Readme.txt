@@ -166,3 +166,22 @@ Si queremos ver los registros de manera ordenada descendetemente, escribimos la 
 	
 	from <nombreApp>.models import <Modelo>
 	Modelo.objects.filter(criterio1__range=(num1, num2)).order_by('-criterio')
+
+Los paneles de administracion en cualquier pagina web, permiten modificar el contenido de la misma, sin hacer cambios gigantescos en 
+el codigo. En las ultimas versiones de Django, ya vienen por defecto al crearse el proyecto con el comando (1). Si queremos acceder al 
+panel de administracion, ingresamos en el navergador la ruta localhost:8000/admin/ pero necesitamos crear un superusuario y contraseña.
+Para crearlo, ingresamos el comando en consola dentro del directorio del proyecto:
+
+	python manage.py createsuperuser				(11)
+
+Por defecto Django nos muestra 2 secciones: Groups y Users. Todos los usuarios que se creen se pueden observar en la base de datos, dentro
+de la tabla auth_user. Para manipular las tablas del panel de administracion, nos dirigimos al archivo admin.py y ingresamos el codigo para 
+nuestro objetivo. Los campos de las tablas, por defecto, seran requeridos y no opcionales, para cambiar esta opcion modificamos el cogido en
+la funcion del modelo en el campo que se puede dejar opcional. Posteriomente ejecutamos los comandos (7) y (2).
+Para cambiar el nombre de los campos de una tabla en el panel de administracion debemos dirigirnos al modelo y hacer el cambio en el campo
+que deseamos ver reflejado el cambio. Para mostrar de manera personalizada la lista de objetos, creamos una funcion en admin.py y la
+instanciamos junto al parametro que se quiere asociar. Para crear un sistema de busqueda, dentro de la misma funcion personalizada, ingresamos
+los cambios.
+Para agregar filtros debemos agregar funcionalidad en la funcion personalizada del archivo admin.py. Para manejar el panel de administracion
+en español, nos dirigimos al archivo settings.py y localizamos la seccion LENGUAGE_CODE y cambiamos a es-CO, es decir, español-Colombia.
+Para establecer permisos a los usuarios debemos modificar los usuarios desde el panel de administracion, al igual que asignarselos a los grupos.
