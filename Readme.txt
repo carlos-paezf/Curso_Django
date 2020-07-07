@@ -138,3 +138,31 @@ Repetimos los comandos (7) y (2) en el orden presentado. Para observar los cambi
 con PostgreSQL, nos dirigimos a la base de datos, luego a la seccion Schemas, y por ultimo a Tables, alli deben estar
 las tablas que hemos creado en nuestro proyecto. Posteriormente podemos hacer uso del manejo de registros por consola, 
 mientras se aprende el uso de formularios.
+
+Para realizar consultas empleando criterios debemos ingresar al shell de python con el comando (9), y alli ingresamos el siguiente
+codigo:
+
+	from <nombreApp>.models import <Modelo>
+	Modelo.objects.filter(criterio1='valorChar', criterio2=valorInt, ....)
+
+Para ver la informacion detallada escribimos en archivo models.py, dentro de la clase del modelo deseado, la funcion __str__():
+Posteriormente migramos los cambios con el comando (7) y (2) respectivamente, saliendo del shell con exit. Luego podemos 
+ingresar al shell y observaremos el cambio. Ahora bien, si en nuestras consultas por shell requerimos usar los operadores '>' o '<', 
+debemos hacer un reemplazo por: 
+
+	'>' criterio__gte=valorInt		'<' criterio__lte=valorInt
+
+Para mostrar la informacion de un criterio comprendido entre un valor y otro, usamos la sintaxis: 
+	
+	criterio__range(num1, num2)
+
+Si queremos ver los registros de manera ordenada ascendentemente segun el filtro, (ORDER BY en lenguaje SQL), concatenamos a la funcion filter la
+sintaxis .order_by('criterio')
+
+	from <nombreApp>.models import <Modelo>
+	Modelo.objects.filter(criterio1__range=(num1, num2)).order_by('criterio')
+
+Si queremos ver los registros de manera ordenada descendetemente, escribimos la sintaxis:
+	
+	from <nombreApp>.models import <Modelo>
+	Modelo.objects.filter(criterio1__range=(num1, num2)).order_by('-criterio')
