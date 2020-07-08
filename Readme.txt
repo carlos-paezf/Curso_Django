@@ -185,3 +185,6 @@ los cambios.
 Para agregar filtros debemos agregar funcionalidad en la funcion personalizada del archivo admin.py. Para manejar el panel de administracion
 en español, nos dirigimos al archivo settings.py y localizamos la seccion LENGUAGE_CODE y cambiamos a es-CO, es decir, español-Colombia.
 Para establecer permisos a los usuarios debemos modificar los usuarios desde el panel de administracion, al igual que asignarselos a los grupos.
+
+Los formularios son importantes para obtener la informacion y enviarla a un servidor. En nuestro proyecto estamos manejando un formulario 
+basico en HTML, en cual recordamos manejo de vistas y rutas.
