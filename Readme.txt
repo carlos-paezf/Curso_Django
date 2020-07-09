@@ -187,4 +187,16 @@ en español, nos dirigimos al archivo settings.py y localizamos la seccion LENGU
 Para establecer permisos a los usuarios debemos modificar los usuarios desde el panel de administracion, al igual que asignarselos a los grupos.
 
 Los formularios son importantes para obtener la informacion y enviarla a un servidor. En nuestro proyecto estamos manejando un formulario 
-basico en HTML, en cual recordamos manejo de vistas y rutas.
+basico en HTML, en cual recordamos manejo de vistas y rutas. Uno de estos formularios es el de envio de emails, para el cual usamos la libreria
+core.mail. Debemos buscar un servidor de correo que nos permita usar sus parametros para que desde nuestro framework podamos enviar los correos.
+Los parametros los definimos en el archivo settings.py. Si queremos usar G-mail, debemos configurarlo para permitir el acceso a terceros. Luego 
+de hacer las configuraciones en el archivo, podemos hacer una prueba con el shell de python, ingresamos el siguiente codigo:
+
+	from django.core.mail import send_mail
+	send_mail(
+	    'Subject here',
+	    'Here is the message.',
+	    'from@example.com',
+	    ['to@example.com'],
+	    fail_silently=False,
+	)
