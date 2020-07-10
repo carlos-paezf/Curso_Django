@@ -200,3 +200,36 @@ de hacer las configuraciones en el archivo, podemos hacer una prueba con el shel
 	    ['to@example.com'],
 	    fail_silently=False,
 	)
+
+Podemos crear formularios mediante la libreria API FORMS. Primero creamos una archivo donde manajaremos como clases los formularios que deseamos
+crear. Posteriormente abrimos el shell de python con el comando (9) e ingresamos el siguiente codigo:
+
+	from <app>.forms import <ClaseFormulario>
+	variable = <ClaseFormulario>()
+	print(variable)
+
+Esto nos da un codigo en HTML con los campos que le hemos pasado a la clase del Formulario, teniendo en cuenta caracteristicas como estar dentro
+de una tabla, el tipo de dato, su requerimiento y demas. Si queremos que como formato no sea una tabla, podemos ingresar el siguiente codigo para
+formatearlo como un parrafo:
+
+	from <app>.forms import <ClaseFormulario>
+	variable = <ClaseFormulario>()
+	print(variable.as_p())
+
+Para una lista desordenada:
+
+	from <app>.forms import <ClaseFormulario>
+	variable = <ClaseFormulario>()
+	print(variable.as_ul())
+
+Podemos pasar la informacion por parametro en forma de un diccionario, y luego comprobar si es valido o no, para hacerlo se escribe:
+
+	variable = <ClaseFormulario>({'key1':'value1', 'key2':'value@2', 'key3':'value3'})
+	variable.is_value()
+
+Tambien podemos ver la informacion que se le ha pasado al formulario mediante un attributo, el cual devolvera un diccionario
+
+	variable.cleaned_data
+
+Teniendo en cuenta todo lo anterior podemos ponerlo en practica dentro del archivo views.py, permitiendo que la validacion de los campos sea mas
+efectiva, y durante la creacion del formulario dentro del archivo HTML se ve reducido el esfuerzo.
