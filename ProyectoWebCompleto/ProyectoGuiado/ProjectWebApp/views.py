@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from Services.models import Servicio
 
 
 def home(request):
@@ -6,7 +7,8 @@ def home(request):
 
 
 def services(request):
-    return render(request, 'ProjectWebApp/services.html')
+    ser = Servicio.objects.all()
+    return render(request, 'ProjectWebApp/services.html', {'servicios': ser})
 
 
 def shop(request):
