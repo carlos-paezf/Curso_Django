@@ -257,12 +257,13 @@ p {
 }
 
 a.link{
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
+  text-decoration: underline;
 }
 
 a.link:hover{
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
 .section-content{
