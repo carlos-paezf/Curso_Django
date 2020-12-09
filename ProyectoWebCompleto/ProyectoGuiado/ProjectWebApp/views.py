@@ -7,7 +7,3 @@ def home(request):
 
 def shop(request):
     return render(request, 'ProjectWebApp/shop.html')
-
-
-def contact(request):
-    return render(request, 'ProjectWebApp/contact.html')
