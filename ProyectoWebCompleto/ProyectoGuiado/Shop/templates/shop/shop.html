@@ -1,9 +1,20 @@
-{% extends "ProjectWebApp/base.html" %}
+{% extends "ProjectWebApp/base.html" %} {% load static %} {% block content %}
 
-    {% load static %}
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="{{product.imagen.url}}" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">{{product.nombre}}</h5>
+                    <p class="card-text">$ &nbsp;{{product.precio}}</p>
+                    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
-        {% block content %}
-            
-            <h1>Tienda</h1>
-            
-        {% endblock %}
+{% endblock %}
