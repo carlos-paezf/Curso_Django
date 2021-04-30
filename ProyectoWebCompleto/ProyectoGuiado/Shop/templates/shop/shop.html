@@ -1,6 +1,11 @@
 {% extends "ProjectWebApp/base.html" %} {% load static %} {% block content %}
 
 <div class="container">
+    
+    <div style="float: right;">
+        <p style="color: white;">Total: ${{ total_amount_carro }}</p>
+    </div>
+
     <div class="row">
         {% for product in products %}
         <div class="col">
@@ -9,7 +14,9 @@
                 <div class="card-body" style="text-align: center;">
                     <h5 class="card-title">{{product.nombre}}</h5>
                     <p class="card-text">$ &nbsp;{{product.precio}}</p>
-                    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-outline-primary">Añadir al carrito</a>
                 </div>
             </div>
         </div>
