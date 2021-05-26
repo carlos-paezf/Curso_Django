@@ -3,18 +3,18 @@
 <div class="container">
 
   <div style="float: right;">
-    <p style="color: white;">Total: ${{ total_amount_carro }}</p>
+    {% include "carro/widget.html" %}
   </div>
 
     <div class="row">
         {% for product in products %}
         <div class="col">
-            <div class="card m-3" style="width: 18rem;">
+            <div class="card m-2" style="width: 18rem;">
                 <img src="{{product.imagen.url}}" class="card-img-top" alt="...">
                 <div class="card-body" style="text-align: center;">
                     <h5 class="card-title">{{product.nombre}}</h5>
                     <p class="card-text">$ &nbsp;{{product.precio}}</p>
-                    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                    <a href="{% url 'carro:add' product.id %}" class="btn btn-primary">Añadir al carrito</a>
                 </div>
             </div>
         </div>
