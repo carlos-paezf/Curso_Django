@@ -21,6 +21,7 @@ class Carro:
             for key, value in self.carro.items():
                 if key == str(product.id):
                     value['amount'] += 1
+                    value['price'] = float(value['price']) + product.precio
                     break
         self.save_session()
 
@@ -38,6 +39,7 @@ class Carro:
         for key, value in self.carro.items():
             if key == str(product.id):
                 value['amount'] -= 1
+                value['price'] = float(value['price']) - product.precio
                 if value['amount'] < 1:
                     self.delete_product(product)
                 break
